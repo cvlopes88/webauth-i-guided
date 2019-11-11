@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcryptjs');
 
 const authRouter = require('../auth/auth-router.js');
 const usersRouter = require('../users/users-router.js');
@@ -9,5 +10,7 @@ router.use('/users', usersRouter);
 router.get('/', (req, res) => {
   res.json({ api: "It's alive" });
 });
+
+router.post('/hash')
 
 module.exports = router;
